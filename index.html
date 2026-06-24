@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flappy Bird AI — Genetic Algorithm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Flappy Bird AI</h1>
+    <p>Neuroevolution — a flock of neural-network birds learns to fly by survival of the fittest</p>
+  </header>
+
+  <main class="arena">
+    <section class="game-col">
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="288" height="512"></canvas>
+      </div>
+    </section>
+
+    <aside class="side-col">
+      <div class="stats" id="stats"></div>
+
+      <div class="card">
+        <div class="card-label">Best fitness per generation</div>
+        <canvas id="curve" class="curve" width="360" height="150"></canvas>
+      </div>
+
+      <div class="card legend">
+        <div class="card-label">How to read it</div>
+        <ul>
+          <li><span class="sw flock"></span> Every bird flies at once — each has its own neural-net brain.</li>
+          <li><span class="sw sensor"></span> The lead bird shows its 5 inputs <b>(0–5)</b> and a line to the gap it aims for.</li>
+          <li><span class="sw evolve"></span> When all crash, the best are bred &amp; mutated into the next generation.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="controls">
+    <label class="speed">
+      Speed <strong id="speedVal">1&times;</strong>
+      <input type="range" id="speed" min="1" max="100" value="1" />
+    </label>
+    <button id="pause">&#10073;&#10073; Pause</button>
+    <button id="reset">&#8635; Reset</button>
+  </footer>
+
+  <script src="src/game.js"></script>
+  <script src="src/nn.js"></script>
+  <script src="src/ga.js"></script>
+  <script src="src/render.js"></script>
+  <script src="src/graph.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>

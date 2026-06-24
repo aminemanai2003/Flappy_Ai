@@ -1,0 +1,215 @@
+:root {
+  --bg: #0f1722;
+  --panel: #16212f;
+  --panel-2: #1d2b3c;
+  --text: #e8eef5;
+  --muted: #8aa0b5;
+  --ga: #4ade80;
+  --footer-h: 74px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: radial-gradient(1100px 600px at 50% -10%, #1b2a3d 0%, var(--bg) 60%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--footer-h);
+}
+
+header {
+  text-align: center;
+  padding: 16px 12px 4px;
+  flex: 0 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+header p {
+  margin: 6px 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ---- main two-column layout ---- */
+.arena {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 14px 22px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.game-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+canvas#gameCanvas {
+  display: block;
+  height: min(720px, calc(100vh - var(--footer-h) - 130px));
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ---- sidebar ---- */
+.side-col {
+  width: 360px;
+  max-width: 42vw;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.stat .k {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+}
+
+.stat .v {
+  font-size: 1.7rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ga);
+  margin-top: 2px;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.card-label {
+  font-size: 0.66rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 8px;
+}
+
+canvas.curve {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.legend ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.legend li {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #cdd9e6;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.legend b { color: var(--text); }
+
+.sw {
+  flex: 0 0 auto;
+  width: 13px;
+  height: 13px;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+.sw.flock { background: #ffd24a; }
+.sw.sensor { background: #13284a; border: 2px solid #fff; }
+.sw.evolve { background: var(--ga); }
+
+/* ---- footer controls ---- */
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 0 14px;
+  background: rgba(12, 18, 26, 0.9);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+.controls label { font-size: 0.85rem; color: var(--muted); }
+.controls .speed { display: flex; align-items: center; gap: 10px; }
+.controls .speed strong { color: var(--text); min-width: 46px; display: inline-block; }
+.controls input[type="range"] { width: 240px; accent-color: var(--ga); }
+
+.controls button {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.controls button:hover { background: #26384d; }
+.controls button:active { transform: translateY(1px); }
+
+/* ---- responsive: stack on narrow screens ---- */
+@media (max-width: 820px) {
+  .arena { flex-direction: column; align-items: center; }
+  .side-col { width: 100%; max-width: 420px; }
+  canvas#gameCanvas { height: min(520px, 64vh); }
+}
