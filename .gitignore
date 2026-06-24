@@ -5,3 +5,6 @@ desktop.ini
 *.log
 .vscode/
 .idea/
+
+# Local-only deep-dive doc (not published)
+PROJECT_EXPLAINED.md

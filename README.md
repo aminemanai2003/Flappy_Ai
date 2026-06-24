@@ -88,7 +88,6 @@ No `npm install`. No bundler. No backend.
 Flappy_Ai/
 ├── index.html              # page layout (canvas + sidebar + controls)
 ├── style.css               # styling / responsive two-column layout
-├── PROJECT_EXPLAINED.md    # 📖 full A→Z deep dive — every concept explained
 ├── sprites/                # real Flappy Bird images
 ├── audio/                  # real Flappy Bird sounds
 └── src/
@@ -101,12 +100,6 @@ Flappy_Ai/
 ```
 
 Each file does exactly one job — physics doesn't know about drawing, the brain doesn't know it's playing Flappy Bird, evolution doesn't know what's inside a brain.
-
----
-
-## 📖 Learn how it works
-
-Want the full story? **[`PROJECT_EXPLAINED.md`](PROJECT_EXPLAINED.md)** is a complete, beginner-friendly A→Z guide that explains **every term and concept** used here — neural networks, weights, biases, activation functions, fitness, selection, crossover, mutation, elitism, the game loop, and more — plus a full glossary.
 
 ---
 
