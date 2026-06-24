@@ -11,6 +11,10 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-purple" />
 </p>
 
+<p align="center">
+  <a href="https://aminemanai2003.github.io/Flappy_Ai/"><b>▶️ Play it live</b></a>
+</p>
+
 ---
 
 ## ✨ What is this?
@@ -25,7 +29,7 @@ Nobody programs the bird with rules like *"if a pipe is close, flap."* Instead:
 
 This technique is called **neuroevolution** = *neural networks* + *genetic algorithms*. You literally **watch evolution happen**, generation by generation.
 
-> 📸 **Demo:** drop a `demo.gif` / `screenshot.png` into the repo and embed it here — e.g. `![demo](demo.gif)`
+> ▶️ **[Play it live in your browser →](https://aminemanai2003.github.io/Flappy_Ai/)** &nbsp;|&nbsp; 📸 _Tip: record a short GIF of the flock learning and embed it here for extra impact._
 
 ---
 
